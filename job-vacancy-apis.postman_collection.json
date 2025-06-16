@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3338f6aa-ea40-48f8-ad11-fcac5c8ab594",
+		"name": "job-vacancy-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26190438"
+	},
+	"item": [
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "create candidates",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nina\",\r\n  \"email\": \"Nina@example.com\",\r\n  \"placeOfBirth\": \"Yogyakarta\",\r\n  \"birthDate\": \"1993-03-15\",\r\n  \"gender\": \"FEMALE\",\r\n  \"currentSalary\": 7000000,\r\n  \"expectedSalary\": 7500000,\r\n  \"lastEducation\": \"D4_S1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/api/candidates"
+					},
+					"response": []
+				},
+				{
+					"name": "get-all candidates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/api/candidates"
+					},
+					"response": []
+				},
+				{
+					"name": "update candidate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"684f73dd8faf5e6c93292362\",\r\n        \"name\": \"Indah Lestari\",\r\n        \"email\": \"indah.l@example.com\",\r\n        \"placeOfBirth\": \"Surabaya\",\r\n        \"birthDate\": \"2002-03-01\",\r\n        \"gender\": \"FEMALE\",\r\n        \"currentSalary\": 4000000,\r\n        \"expectedSalary\": 6000000,\r\n        \"lastEducation\": \"S2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/api/candidates/{$id}"
+					},
+					"response": []
+				},
+				{
+					"name": "delete candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/api/candidates/{$id}"
+					},
+					"response": []
+				},
+				{
+					"name": "get-detail candidate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/api/candidates/{$id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacancies",
+			"item": [
+				{
+					"name": "create vacancies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vacancy\": \"Backend Engineer\",\r\n  \"description\": \"Develop backend systems\",\r\n  \"criteria\": [\r\n    {\r\n      \"type\": \"AGE\",\r\n      \"minAge\": 25,\r\n      \"maxAge\": 35,\r\n      \"weight\": 30\r\n    },\r\n    {\r\n      \"type\": \"GENDER\",\r\n      \"gender\": \"MALE\",\r\n      \"weight\": 20\r\n    },\r\n    {\r\n      \"type\": \"SALARY\",\r\n      \"minSalary\": 5000000,\r\n      \"maxSalary\": 10000000,\r\n      \"weight\": 30\r\n    },\r\n    {\r\n      \"type\": \"EDUCATION\",\r\n      \"education\": \"D3\",\r\n      \"weight\": 20\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/api/vacancies"
+					},
+					"response": []
+				},
+				{
+					"name": "get-all vacancies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/api/vacancies"
+					},
+					"response": []
+				},
+				{
+					"name": "get-detail vacancies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/api/vacancies/{$id}"
+					},
+					"response": []
+				},
+				{
+					"name": "update vacancies",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"vacancy\": \"Backend Engineer\",\r\n        \"description\": \"Develop backend systems\",\r\n        \"criteria\": [\r\n            {\r\n                \"type\": \"AGE\",\r\n                \"weight\": 30,\r\n                \"minAge\": 25,\r\n                \"maxAge\": 35\r\n            },\r\n            {\r\n                \"type\": \"GENDER\",\r\n                \"weight\": 20,\r\n                \"gender\": \"MALE\"\r\n            },\r\n            {\r\n                \"type\": \"SALARY\",\r\n                \"weight\": 30,\r\n                \"minSalary\": 5000000,\r\n                \"maxSalary\": 10000000\r\n            },\r\n            {\r\n                \"type\": \"EDUCATION\",\r\n                \"weight\": 20,\r\n                \"education\": \"SMA\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/api/vacancies/{$id}"
+					},
+					"response": []
+				},
+				{
+					"name": "delete vacancies",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/api/vacancies/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ranking vacancies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/api/rankings/{id}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
